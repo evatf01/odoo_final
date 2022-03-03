@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+        <act_window id="relaciones_clientes_action" name="clientes"
+                    res_model="relaciones.clientes"/>
+
+        <record id="relaciones_clientes_view_tree" model="ir.ui.view">
+            <field name="name">Lista clientes</field>
+            <field name="model">relaciones.clientes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                   
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="annos"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="relaciones_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de clientes</field>
+            <field name="model">relaciones.clientes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+						<field name="dni"/>
+						<field name="nombre"/>
+						<field name="apellidos"/>
+						
+						<field name="provincia"/>
+						<field name="codPostal"/>
+						<field name="telefono"/>
+						<field name="email"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="relaciones_clientes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda clientes</field>
+            <field name="model">relaciones.clientes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni"/>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                   
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_clientes" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_clientes" sequence="10"/>
+        <menuitem name="Clientes" id="clientes" action="relaciones_clientes_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

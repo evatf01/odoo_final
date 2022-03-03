@@ -1,0 +1,53 @@
+
+<odoo>
+    <data>
+        <act_window id="relaciones_destinos_action" name="destinos"
+                    res_model="relaciones.destinos"/>
+
+        <record id="relaciones_destinos_view_tree" model="ir.ui.view">
+            <field name="name">Lista destinos</field>
+            <field name="model">relaciones.destinos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod"/>
+                        <field name="poblacion"/>
+                        <field name="provincia"/>
+                        <field name="codPostal"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="relaciones_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de destinos</field>
+            <field name="model">relaciones.destinos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                       <field name="cod"/>
+                        <field name="poblacion"/>
+                        <field name="provincia"/>
+                        <field name="codPostal"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="relaciones_destinos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda destinos</field>
+            <field name="model">relaciones.destinos</field>
+            <field name="arch" type="xml">
+                <search>
+                        <field name="cod"/>
+                        <field name="poblacion"/>
+                        <field name="provincia"/>
+                        <field name="codPostal"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_destinos" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_destinos" sequence="10"/>
+        <menuitem name="Destinos" id="destinos" action="relaciones_destinos_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

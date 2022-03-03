@@ -1,0 +1,51 @@
+
+<odoo>
+    <data>
+        <act_window id="relaciones_paquetes_action" name="paquetes"
+                    res_model="relaciones.paquetes"/>
+
+        <record id="relaciones_paquetes_view_tree" model="ir.ui.view">
+            <field name="name">Lista paquetes</field>
+            <field name="model">relaciones.paquetes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod"/>
+                        <field name="peso"/>
+                        <field name="precio"/>
+                        <field name="total"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="relaciones_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de paquetes</field>
+            <field name="model">relaciones.paquetes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                      <field name="cod"/>
+                        <field name="peso"/>
+                        <field name="precio"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="relaciones_paquetes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda paquetes</field>
+            <field name="model">relaciones.paquetes</field>
+            <field name="arch" type="xml">
+                <search>
+                        <field name="cod"/>
+                        <field name="peso"/>
+                        <field name="precio"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_paquetes" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_paquetes" sequence="10"/>
+        <menuitem name="Paquetes" id="paquetes" action="relaciones_paquetes_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

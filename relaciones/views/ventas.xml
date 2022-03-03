@@ -1,0 +1,68 @@
+
+<odoo>
+    <data>
+        <act_window id="relaciones_ventas_action" name="ventas"
+                    res_model="relaciones.ventas"/>
+
+        <record id="relaciones_ventas_view_tree" model="ir.ui.view">
+            <field name="name">Lista ventas</field>
+            <field name="model">relaciones.ventas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod"/>
+                        <field name="fecha_venta"/>
+                        <field name="descripcion"/>
+                        <field name="cliente"/>
+                        <field name="articulo"/>
+                        <field name ="destino"/>
+                        <field name="precio"/>
+                        <field name="cantidad"/>
+                        <field name="paquete"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="relaciones_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de ventas</field>
+            <field name="model">relaciones.ventas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="cod"/>
+                        <field name="fecha_venta"/>
+                        <field name="descripcion"/>
+                        <field name="cliente"/>
+                        <field name="articulo"/>
+                        <field name ="destino"/>
+                        <field name="precio"/>
+                        <field name="cantidad"/>
+                        <field name="paquete"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="relaciones_ventas_view_search" model="ir.ui.view">
+            <field name="name">Busqueda ventas</field>
+            <field name="model">relaciones.ventas</field>
+            <field name="arch" type="xml">
+                <search>
+                   <field name="cod"/>
+                        <field name="fecha_venta"/>
+                        <field name="descripcion"/>
+                        <field name="cliente"/>
+                        <field name="articulo"/>
+                        <field name ="destino"/>
+                        <field name="precio"/>
+                        <field name="cantidad"/>
+                        <field name="paquete"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_ventas" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_ventas" sequence="10"/>
+        <menuitem name="Ventas" id="ventas" action="relaciones_ventas_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

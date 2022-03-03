@@ -1,0 +1,65 @@
+
+<odoo>
+    <data>
+        <act_window id="relaciones_proveedores_action" name="proveedores"
+                    res_model="relaciones.proveedores"/>
+
+        <record id="relaciones_proveedores_view_tree" model="ir.ui.view">
+            <field name="name">Lista proveedores</field>
+            <field name="model">relaciones.proveedores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cif"/>
+                    <field name="nombre"/>
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="relaciones_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de proveedores</field>
+            <field name="model">relaciones.proveedores</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+						<field name="cif"/>
+						<field name="nombre"/>
+						<field name="direccion"/>
+						<field name="poblacion"/>
+						<field name="provincia"/>
+						<field name="codPostal"/>
+						<field name="telefono"/>
+						<field name="email"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+		
+        <record id="relaciones_proveedores_view_search" model="ir.ui.view">
+            <field name="name">Busqueda proveedores</field>
+            <field name="model">relaciones.proveedores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cif"/>
+                    <field name="nombre"/>
+                    <field name="direccion"/>
+                    <field name="poblacion"/>
+                    <field name="provincia"/>
+                    <field name="codPostal"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_proveedores" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_proveedores" sequence="10"/>
+        <menuitem name="Proveedores" id="proveedores" action="relaciones_proveedores_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>

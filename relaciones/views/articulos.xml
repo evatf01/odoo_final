@@ -1,0 +1,61 @@
+
+<odoo>
+    <data>
+        <act_window id="relaciones_articulos_action" name="articulos"
+                    res_model="relaciones.articulos"/>
+
+        <record id="relaciones_articulos_view_tree" model="ir.ui.view">
+            <field name="name">Lista articulos</field>
+            <field name="model">relaciones.articulos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                    <field name="precio"/>
+                    <field name="cantidad"/>
+                    <field name = "total"/>
+                    
+                </tree>
+            </field>
+        </record>
+		
+		<record id="relaciones_articulos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de articulos</field>
+            <field name="model">relaciones.articulos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+						<field name="cod"/>
+						<field name="descripcion"/>
+						<field name="proveedor"/>
+						<field name="precio"/>
+						<field name="cantidad"/>
+                        
+                       
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="relaciones_articulos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda articulos</field>
+            <field name="model">relaciones.articulos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                    <field name="precio"/>
+                    <field name="cantidad"/>
+                    
+                </search>
+            </field>
+        </record>
+        <menuitem name="relaciones" id="relaciones_articulos" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="relaciones_articulos" sequence="10"/>
+        <menuitem name="Articulos" id="articulos" action="relaciones_articulos_action" parent="menu_inicio"
+                  sequence="10"/>
+
+  </data>
+</odoo>
